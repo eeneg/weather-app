@@ -35,7 +35,7 @@ const resetMapMarkers = () =>{
 
 const markSingleLocation = (location) => {
     const start = [location.longitude, location.latitude]
-    map.value.setCenter(start)
+    map.value.flyTo({center: start, zoom: 10})
     if(map.value.getLayer('start')) {
         map.value.getSource('start').setData({
             type: 'FeatureCollection',
@@ -83,7 +83,7 @@ const updateMap = (route) => {
     const end = route.waypoints[1]
     const geojson = route.routes[0].geometry.coordinates
 
-    map.value.setCenter(start.location)
+    map.value.flyTo({center: start.location, zoom: 10})
 
     if(map.value.getLayer('start')) {
         map.value.getSource('start').setData({
