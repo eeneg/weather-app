@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Http;
 
 class WeatherService
 {
+    //OpenWeather API for weather info
     public function searchWeather($lat, $long){
         $response = Http::get('api.openweathermap.org/data/2.5/weather',[
             'lat' => $lat,

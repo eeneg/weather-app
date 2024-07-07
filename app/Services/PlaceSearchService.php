@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Http;
 
 class PlaceSearchService
 {
+    //FourSquare AutoComplete API
     public function autoCompleteSearch($near, $query){
         $response = Http::withHeaders([
             'Authorization' => env('VITE_FourSquareKEY'),
@@ -17,6 +18,7 @@ class PlaceSearchService
         return $response;
     }
 
+    //FourSquare Place Photos API
     public function placeGetPhotos($query){
         $response = Http::withHeaders([
             'Authorization' => env('VITE_FourSquareKEY')
@@ -27,7 +29,7 @@ class PlaceSearchService
         return $response->object();
     }
 
-
+    //FourSquare Related Trending Venues for place suggestions
     public function relatedVenueSearch($query){
         $response = Http::get('https://api.foursquare.com/v2/venues/trending', [
             'client_id' => env('VITE_FourSquareCLientID'),
@@ -43,6 +45,7 @@ class PlaceSearchService
         return $response->object();
     }
 
+    //FourSqure Directions API for travel directions
     public function placeDirectionSearch($from, $to, $mode){
         $response = Http::get('https://api.mapbox.com/directions/v5/mapbox/'
             .$mode.'/'.
