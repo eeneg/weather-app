@@ -65,16 +65,20 @@ const selectPlace = (data) => {
     if (startLocationInput.value && !endLocationInput.value) {
         startingAddressSearch.value = primary;
         routeSearch.value.from = { latitude, longitude };
+
         searchPlaceInformation(data.place.fsq_id, { latitude, longitude });
+
         updateSmallMapEvent.value.markSingleLocation({ latitude, longitude });
         updateMapEvent.value.markSingleLocation({ latitude, longitude });
+
+        selectedPlaceText.value = { name: primary, address: secondary };
     } else if (endLocationInput.value && !startLocationInput.value) {
         endAddressSearch.value = primary;
         routeSearch.value.to = { latitude, longitude };
         getDirections();
     }
 
-    selectedPlaceText.value = { name: primary, address: secondary };
+
     searchResults.value = [];
 };
 
