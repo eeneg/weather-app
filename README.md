@@ -1,5 +1,3 @@
-## Gene Philip Rellanos
-
 Weather and Map App
 
 ## Setup
@@ -11,16 +9,6 @@ Weather and Map App
 - php artisan migrate (did not use a database but the command is needed)
 - php artisan serve
 - npm run dev
-
-## ENV Data for API KEYS (Use Responsibly) IMPORTANT
-
-VITE_MapBoxKEY='pk.eyJ1IjoiZWVuZWciLCJhIjoiY2x5OGcwYnhwMGcyeTJycXQzMDh2aHExayJ9.nxOYSeThsuL6-jWeMbhiXQ'
-VITE_OpenWeatherKEY='3ad574899038a18e87713e76c123797d'
-VITE_FourSquareKEY='fsq3WP5NbCflVQMqwW0i+bZrhibZo462ZlrQdMXVknK+My8='
-VITE_FourSquareCLientID='P5JHGSG5D5DOZVGGL3VNHUVDTZX5CG1FC4W3MGTWB3JMEZ1N'
-VITE_FourSquareCLientSecretID='WB2XX5DA4VAJ0TOJ1YXCS4G2SHTOOK30X4KGG4YE4KFG1RHL'
-
-Or just copy the .env.example contents
 
 ## UI
 
